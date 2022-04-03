@@ -72,7 +72,7 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mx-3" onClick={handleAutoCapitalize}>First Letter Capitalized</button>
             </div>
             <h2 style={{ color: props.mode === 'light' ? '#2c3251' : 'white' }} class="my-3">Text Summary</h2>
-            <div className="container my-3" style={{ backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'light' ? '#2c3251' : 'white' }}>
+            <div className="container my-3" style={{ color: props.mode === 'light' ? '#2c3251' : 'white' }}>
 
                 <p>{text.split(" ").length} Words and {text.length} Characters</p>
                 <p>Average {0.008 * text.split(" ").length} minutes time to read</p>
