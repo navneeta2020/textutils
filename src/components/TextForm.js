@@ -53,15 +53,21 @@ export default function TextForm(props) {
     return (
         <>
             <div>
+                <h2>{props.heading}</h2>
                 <div className="mb-3" style={{ backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'light' ? '#2c3251' : 'white' }}>
-                    <h2>{props.heading}</h2>
+
                     <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8" style={{ backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'light' ? '#2c3251' : 'white' }}></textarea>
                 </div>
                 <button className="btn btn-primary mx-3" onClick={handleUpperClick}>Convert To Uppercase</button>
+
                 <button className="btn btn-primary mx-3" onClick={handleLowerClick}>Convert To Lowercase</button>
+
                 <button className="btn btn-primary mx-3" onClick={handleClearClick}>Clear Text</button>
+
                 <button className="btn btn-primary mx-3" onClick={handleCopy}>Copy Text</button>
+
                 <button className="btn btn-primary mx-3" onClick={handleRemoveSpace}>Remove Extra Spaces</button>
+
                 <button className="btn btn-primary mx-3" onClick={handleAutoCapitalize}>First Letter Capitalized</button>
             </div>
             <div className="container my-3" style={{ backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'light' ? '#2c3251' : 'white' }}>
