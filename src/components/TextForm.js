@@ -34,6 +34,17 @@ export default function TextForm(props) {
         props.showAlert("Extra spaces removed", "success");
     }
 
+    const handleAutoCapitalize = () => {
+        let newText = text.split(/[ ]+/);
+        let newArr = [];
+        newText.forEach(element => {
+            let newElement = element[0].toUpperCase() + element.slice(1).toLowerCase();
+            newArr.push(newElement);
+
+        });
+        setText(newArr.join(" "));
+        props.showAlert("First Letter Capitalized", "success");
+    }
     const handleOnChange = (event) => {
         // console.log("On change");
         setText(event.target.value);
@@ -51,6 +62,7 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mx-3" onClick={handleClearClick}>Clear Text</button>
                 <button className="btn btn-primary mx-3" onClick={handleCopy}>Copy Text</button>
                 <button className="btn btn-primary mx-3" onClick={handleRemoveSpace}>Remove Extra Spaces</button>
+                <button className="btn btn-primary mx-3" onClick={handleAutoCapitalize}>First Letter Capitalized</button>
             </div>
             <div className="container my-3" style={{ backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'light' ? '#2c3251' : 'white' }}>
                 <h2>Text Summary</h2>
